@@ -1,4 +1,4 @@
-let db = {
+const db = {
     users: [
         {
             userId: 'hixzv6gfvff706Z7ubQaYBQcFOf1',
@@ -18,6 +18,14 @@ let db = {
             createdAt: '2020-01-09T14:27:55.464Z',
             likeCount: 5,
             commentCount: 2
+        }
+    ],
+    comments: [
+        {
+            userHandle: 'user',
+            screamId: 'dsdadsadasdasd',
+            body: 'nice one',
+            createdAt: '2020-01-09T14:27:55.464Z'
         }
     ]
 }
