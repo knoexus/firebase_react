@@ -1,7 +1,12 @@
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 const app = require('express')()
-admin.initializeApp()
+const serviceAccount = require('./keyinfo.json')
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://fir-react-a3e72.firebaseio.com"
+})
 
 const firebaseConfig = {
     apiKey: "AIzaSyBO4nRhbCbqznNPFPFNcSIMK4gV87_oz7o",
