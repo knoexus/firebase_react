@@ -17,7 +17,7 @@ exports.signUp = (req, res) => {
 
     const { valid, errors } = validateSignUpData(newUser) 
 
-    if(!valid) return res.status(400).json({ errors })
+    if(!valid) return res.status(400).json(errors)
 
     const noImg = 'no-img.png'
 
@@ -65,7 +65,7 @@ exports.login = (req, res) => {
 
     const { valid, errors } = validateLoginData(user) 
 
-    if(!valid) return res.status(400).json({ errors })
+    if(!valid) return res.status(400).json(errors)
 
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         .then(data => data.user.getIdToken())
